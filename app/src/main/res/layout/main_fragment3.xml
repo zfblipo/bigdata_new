@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/mainc_status"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/main_color"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_color">
+
+        <TextView
+            android:id="@+id/mainc_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="历史战绩"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/mainc_title_button"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/reddark_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="2017/3/20"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/main_red_border"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mainc_time1"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="前一天"
+                    android:background="@drawable/selector_main_color_left"
+                    android:textColor="@color/main_color"
+                    android:textSize="13sp" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_color" />
+
+                <Button
+                    android:id="@+id/mainc_time2"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="后一天"
+                    android:background="@drawable/selector_main_coloe_right"
+                    android:textColor="@color/main_color"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:background="@mipmap/ball_red_icon" />
+
+                <TextView
+                    android:id="@+id/mainc_score_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="共4场，预测命中3场，"
+                    android:textColor="@color/main_text3"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/mainc_score_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="命中率75.00%"
+                    android:textColor="@color/main_color"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/mainc_pull"
+                layout="@layout/cell_pull_list" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/mianc_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:visibility="gone"/>
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mianc_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mcv_selectionColor="@color/main_color"
+            app:mcv_showOtherDates="all"
+            android:background="@color/white"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+</LinearLayout>

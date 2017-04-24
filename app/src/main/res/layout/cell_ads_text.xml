@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:lines="1"
+    android:singleLine="true"
+    android:gravity="center_vertical"
+    android:text="新用户注册有礼物哦，小伙伴们赶紧来行动吧。"
+    android:textColor="@color/main_orange"
+    android:textSize="14sp" />

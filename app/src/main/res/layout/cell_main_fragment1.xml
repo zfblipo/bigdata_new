@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/maina_frame"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:visibility="gone">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/maina_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.xingnext.bigdata.views.MyPagerIndicator
+            android:id="@+id/maina_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dp" />
+    </FrameLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line"
+        android:visibility="gone" />
+
+    <!-- 首页需要更改布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/lin_mainta_a1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main1_img1"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@mipmap/main2_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main1_img1"
+                android:layout_marginTop="5dp"
+                android:text="智能预测"
+                android:textColor="@color/main_text3"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_mainta_a2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main1_img2"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@mipmap/main2_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main1_img2"
+                android:layout_marginTop="5dp"
+                android:text="红单推荐"
+                android:textColor="@color/main_text3"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_mainta_a3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main1_img3"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@mipmap/main2_3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main1_img3"
+                android:layout_marginTop="5dp"
+                android:text="历史战绩"
+                android:textColor="@color/main_text3"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_mainta_a4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main1_img4"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:src="@mipmap/main2_4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/main1_img4"
+                android:layout_marginTop="5dp"
+                android:text="新手帮助"
+                android:textColor="@color/main_text3"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/main2_guangbo" />
+
+        <ViewFlipper
+            android:id="@+id/main1_viewfli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ViewFlipper>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:background="@color/main_bg"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/maina_plan"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="比赛预测"
+            android:textColor="@color/main_orange"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/main_line2" />
+
+        <TextView
+            android:id="@+id/maina_history"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="历史战绩"
+            android:textColor="@color/main_text3"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="1px"
+        android:background="@color/main_line" />
+
+    <View
+        android:id="@+id/maina_line"
+        android:layout_width="120dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="-2dp"
+        android:background="@color/main_color" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/maina_frame_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+
+        <ImageButton
+            android:id="@+id/main_imgbtn_cell"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/top_bg"></ImageButton>
+    </FrameLayout>
+
+</LinearLayout>

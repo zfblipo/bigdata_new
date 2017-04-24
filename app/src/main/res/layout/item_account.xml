@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="16dp">
+
+    <TextView
+        android:id="@+id/item_account_orderid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单ID：1789"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/main_text3"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/item_account_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单ID：1789"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/main_text6"
+        android:layout_below="@+id/item_account_orderid"
+        android:textSize="13sp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/item_account_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+20.00"
+        android:textColor="@color/main_text3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:textSize="15sp"/>
+
+</RelativeLayout>

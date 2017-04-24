@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/maina_twoa_up"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="上一期"
+            android:textColor="@color/main_text9"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:id="@+id/maina_twoa_middle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/maina_twoa_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    "
+                android:textColor="@color/main_text9"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/maina_twoa_icon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@mipmap/hui_zhi_xia_icon"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/maina_twoa_next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="下一期"
+            android:textColor="@color/main_text9"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/maina_twoa_pull"
+            layout="@layout/cell_pull_list"/>
+
+        <View
+            android:id="@+id/maina_twoa_remark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:visibility="gone"/>
+
+        <GridView
+            android:id="@+id/maina_twoa_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:numColumns="3"
+            android:background="@color/white"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</LinearLayout>

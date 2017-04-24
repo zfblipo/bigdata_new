@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/main_black</item>
+    </style>
+
+    <style name="AppRedTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/main_color</item>
+    </style>
+
+    <!--这是首页底部条目的样式-->
+    <style name="Buttom_Item_Style">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:onClick">LayoutOnclickMethod</item>
+    </style>
+
+
+    <!--这是对话框-->
+    <style name="mydialog" parent="@android:style/Theme.Dialog">
+        <!-- 对话框出现时背景是否变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 对话框背景(重要) -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <!--这是不带背景的对话框-->
+    <style name="mydialogNobg" parent="@android:style/Theme.Dialog">
+        <!-- 对话框出现时背景是否变暗 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 对话框背景(重要) -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <!--这是pop的动画-->
+    <style name="popup_animation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_buttom_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_bottom_out</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_bg">
+
+    <include
+        android:id="@+id/cell_pull_scroll_empty"
+        layout="@layout/cell_empty"
+        android:visibility="gone" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/cell_pull_scroll_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.xingnext.bigdata.views.MyListenerScrollView
+            android:id="@+id/cell_pull_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/cell_pull_scroll_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </com.xingnext.bigdata.views.MyListenerScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

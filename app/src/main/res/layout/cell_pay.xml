@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bg"
+        android:paddingBottom="15dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="15dp"
+        android:text="支付方式"
+        android:textColor="@color/main_text6"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+
+    <RelativeLayout
+        android:id="@+id/cell_pay_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="15dp" >
+
+        <ImageView
+            android:id="@+id/cell_pay_icon1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/pay_by_alipay" />
+
+        <TextView
+            android:id="@+id/cell_pay_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付宝支付"
+            android:layout_centerVertical="true"
+            android:textColor="@color/main_text3"
+            android:textSize="15sp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/cell_pay_icon1" />
+        
+        <ImageView
+            android:id="@+id/cell_pay_select1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/checkbox_pressed"
+            android:layout_alignParentRight="true" />
+        
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
+    
+    <RelativeLayout
+        android:id="@+id/cell_pay_item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="15dp" >
+
+        <ImageView
+            android:id="@+id/cell_pay_icon2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/pay_by_bank_card" />
+
+        <TextView
+            android:id="@+id/cell_pay_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银行卡支付"
+            android:layout_centerVertical="true"
+            android:textColor="@color/main_text3"
+            android:textSize="15sp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/cell_pay_icon2" />
+        
+        <ImageView
+            android:id="@+id/cell_pay_select2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/checkbox_normal"
+            android:layout_alignParentRight="true" />
+        
+    </RelativeLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line" />
+    
+</LinearLayout>

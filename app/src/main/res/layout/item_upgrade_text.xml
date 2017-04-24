@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="应用圈等你来看内容和找应用"
+    android:textColor="@color/main_text6"
+    android:textSize="13sp"
+    android:gravity="center_vertical"/>

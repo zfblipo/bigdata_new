@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingnext.bigdata.MyAccountActivity">
+
+    <include
+        android:id="@+id/my_account_top"
+        layout="@layout/cell_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_red_pink"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_color"
+        android:paddingBottom="15dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="15dp" >
+
+        <TextView
+            android:id="@+id/my_account_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的球币"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/my_account_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_account_my"
+            android:layout_marginTop="8dp"
+            android:text="0.00"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/my_account_money"
+            android:layout_toRightOf="@+id/my_account_money"
+            android:text="个"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginLeft="2dp"
+            android:paddingBottom="2dp"/>
+
+
+        <TextView
+            android:id="@+id/my_account_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/main_orange_border"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="6dp"
+            android:text="购买球币"
+            android:textColor="@color/main_orange"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_red_black"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/my_account_all"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="全部"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/my_account_come"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="收入"
+            android:textSize="15dp"
+            android:textColor="@color/main_red_pink"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/my_account_go"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="支出"
+            android:textSize="15dp"
+            android:textColor="@color/main_red_pink"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/my_account_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

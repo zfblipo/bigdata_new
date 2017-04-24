@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:background="@color/main_bg"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/item_text_time_date"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:gravity="center_vertical"
+        android:text="2015-20-30"
+        android:textColor="@color/main_text3"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/item_text_time_num"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:gravity="center_vertical"
+        android:text="（总11场）"
+        android:textColor="@color/main_text6"
+        android:textSize="12sp" />
+
+</LinearLayout>

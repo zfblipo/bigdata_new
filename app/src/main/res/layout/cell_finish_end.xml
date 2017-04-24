@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <TextView
+        android:id="@+id/cell_finish_end_text"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="加载完成"
+    	android:gravity="center"
+    	android:textColor="@color/main_text6"
+    	android:layout_centerHorizontal="true"
+    	android:textSize="10sp"/>
+    
+    <View
+        android:layout_width="match_parent"
+    	android:layout_height="1px"
+    	android:background="@color/main_line"
+    	android:layout_centerVertical="true"
+    	android:layout_toLeftOf="@+id/cell_finish_end_text"
+    	android:layout_marginRight="6dp"/>
+    
+    <View
+        android:layout_width="match_parent"
+    	android:layout_height="1px"
+    	android:background="@color/main_line"
+    	android:layout_centerVertical="true"
+    	android:layout_toRightOf="@+id/cell_finish_end_text"
+    	android:layout_marginLeft="6dp"/>
+    
+</RelativeLayout>

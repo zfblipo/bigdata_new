@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xingnext.bigdata.GameSampleActivity"
+    android:background="@color/main_bg">
+
+    <include
+        android:id="@+id/game_sample_top"
+        layout="@layout/cell_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="时间"
+            android:textSize="13dp"
+            android:layout_weight="5"
+            android:textColor="@color/main_text6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="联赛"
+            android:textSize="13dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@color/main_text6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="比赛"
+            android:textSize="13dp"
+            android:layout_weight="12"
+            android:gravity="center"
+            android:textColor="@color/main_text6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="赛果"
+            android:textSize="13dp"
+            android:layout_weight="2.5"
+            android:gravity="center"
+            android:textColor="@color/main_text6"/>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/game_sample_list"
+        layout="@layout/cell_list_view"/>
+
+</LinearLayout>

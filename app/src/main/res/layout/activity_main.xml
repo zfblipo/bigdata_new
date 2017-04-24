@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/main_fragment1"
+        android:name="com.xingnext.bigdata.fragment.MainFragment1_two"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <fragment
+        android:id="@+id/main_fragment2"
+        android:name="com.xingnext.bigdata.fragment.MainFragment2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <fragment
+        android:id="@+id/main_fragment3"
+        android:name="com.xingnext.bigdata.fragment.MainFragment3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <fragment
+        android:id="@+id/main_fragment4"
+        android:name="com.xingnext.bigdata.fragment.MainFragment4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include layout="@layout/cell_tab_bottom" />
+
+</LinearLayout>
+

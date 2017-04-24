@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/item_record_guess_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订阅时间：2017-03-04  12:00:00"
+            android:layout_centerVertical="true"
+            android:textSize="12sp"
+            android:textColor="@color/main_text3" />
+
+        <TextView
+            android:id="@+id/item_record_guess_status"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="未完场"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:textColor="@color/main_color" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <ImageView
+            android:id="@+id/item_record_guess_icon1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ball_red_icon" />
+
+        <TextView
+            android:id="@+id/item_record_guess_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/item_record_guess_icon1"
+            android:text="单场"
+            android:textColor="@color/main_color"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/item_record_guess_game_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/item_record_guess_type"
+            android:text="周日033 意甲 03-12 22:00 开赛"
+            android:textColor="@color/main_text9"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/item_record_guess_detial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="查看详情"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/main_text6"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp" >
+
+        <ImageView
+            android:id="@+id/item_record_guess_team_icon1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@color/black" />
+
+        <TextView
+            android:id="@+id/item_record_guess_team_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/item_record_guess_team_icon1"
+            android:text="国际米兰"
+            android:textColor="@color/main_text3"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="VS"
+            android:textColor="@color/main_text9"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/item_record_guess_team_icon2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@color/black" />
+
+        <TextView
+            android:id="@+id/item_record_guess_team_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:layout_toLeftOf="@+id/item_record_guess_team_icon2"
+            android:text="亚特兰大"
+            android:textColor="@color/main_text3"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="12dp"
+        android:requiresFadingEdge="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_bg"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="5dp"
+            android:text="预测"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/item_record_guess_win_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/check_middle_icon" />
+
+                <TextView
+                    android:id="@+id/item_record_guess_win"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="主胜2.098"
+                    android:textColor="@color/main_text6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/item_record_guess_draw_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/check_middle_icon" />
+
+                <TextView
+                    android:id="@+id/item_record_guess_draw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="平局2.099"
+                    android:textColor="@color/main_text6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/item_record_guess_failure_icon"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@mipmap/check_middle_icon" />
+
+                <TextView
+                    android:id="@+id/item_record_guess_failure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="客胜2.778"
+                    android:textColor="@color/main_text6"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

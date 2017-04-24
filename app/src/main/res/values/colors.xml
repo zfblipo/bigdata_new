@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <color name="colorPrimary">#C8C7CC</color>
+    <color name="colorAccent">#FF4081</color>
+    -->
+    <color name="colorPrimaryDark">#32343A</color>
+
+
+    <!-- tab底部 -->
+    <color name="tab_bg">#FFFFFFFF</color>
+    <color name="tab_line">#FFE3E5E9</color>
+    <color name="tab_text_normal">#FF929292</color>
+    <color name="tab_text_press">#FFFF4400</color>
+    <color name="meun_shadow">#C8C8C8</color>
+
+    <color name="red">#FF0000</color>
+    <color name="gray">#929292</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="transparent_black">#80000000</color>
+    <color name="transparent_black2">#30000000</color>
+    <color name="transparent_white">#80FFFFFF</color>
+
+    <!--主-->
+    <color name="main_color">#FFFF4444</color>
+    <color name="main_bg">#F3F3F3</color>
+    <color name="main_blue">#5F83C1</color>
+    <color name="main_blue_black">#282F39</color>
+    <color name="main_blue_black2">#32343A</color>
+    <color name="cemain_bg">#FFF6F6F6</color>
+    <color name="main_text">#333333</color>
+    <color name="main_text_gray">#FF9B9B9B</color>
+    <color name="main_line">#DCDCDC</color>
+    <color name="main_gray">#C8C7CC</color>
+    <color name="main_line1">#F4F4F4</color>
+    <color name="main_line2">#C8C7CC</color>
+    <color name="main_line_green">#3B414A</color>
+    <color name="main_title_line">#BBBBBB</color>
+    <color name="main_black">#0C0C0C</color>
+    <color name="main_orange_bg">#FFFCD1</color>
+    <color name="main_orange">#FAB016</color>
+    <color name="main_orange_text">#D28F0B</color>
+    <color name="main_pressorange">#FF6600</color>
+    <color name="main_text3">#333333</color>
+    <color name="main_text6">#666666</color>
+    <color name="main_text9">#999999</color>
+    <color name="main_red_clock">#FFFF4400</color>
+    <color name="main_red_pink">#FFFF9393</color>
+    <color name="main_red_black">#E73E3E</color>
+    <color name="main_surplus">#FF7A7A7A</color>
+    <color name="main_name_blue">#FF31A5EC</color>
+    <color name="main_translation">#80000000</color>
+    <color name="main_pink_bg">#FFECEC</color>
+    <color name="main_yellow_bg">#FFFFF8ED</color>
+    <color name="main_text_green">#63C280</color>
+
+    <!--标题-->
+    <color name="title_bg">#E6FAFAFA</color>
+    <color name="title_line">#FFB2B2B2</color>
+
+    <!-- 详情页面 -->
+    <color name="detail_black_bg">#0c0c0c</color>
+    <color name="detail_blue_blac_bg">#3D4049</color>
+
+    <drawable name="drawable_main_color">#FFFF4444</drawable>
+    <drawable name="drawable_white">#FFFFFF</drawable>
+    <drawable name="drawable_empty">#00000000</drawable>
+
+    <color name="success_blue">#FF28ABEC</color>
+    <color name="login_line">#FFDBDBDB</color>
+
+    <color name="sample_fail">#0075A9</color>
+    <color name="sample_pin">#22AC38</color>
+
+</resources>

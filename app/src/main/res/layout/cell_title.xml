@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/main_color">
+
+    <ImageView
+        android:id="@+id/cell_title_back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@mipmap/back_white_icon"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/cell_title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:layout_centerInParent="true"
+        />
+    <!--android:textStyle="bold" 加粗-->
+    <TextView
+        android:id="@+id/cell_title_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/cell_title_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

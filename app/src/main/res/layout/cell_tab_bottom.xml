@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/tab_bg"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:src="@color/tab_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            style="@style/Buttom_Item_Style">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/tabbar_icon_press_1" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/fragment_name1"
+                android:textColor="@color/tab_text_press"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            style="@style/Buttom_Item_Style">
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/tabbar_icon_normal_2" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/fragment_name2"
+                android:textColor="@color/tab_text_normal"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            style="@style/Buttom_Item_Style">
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/tabbar_icon_normal_3" />
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/fragment_name3"
+                android:textColor="@color/tab_text_normal"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/layout4"
+            style="@style/Buttom_Item_Style">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@mipmap/tabbar_icon_normal_4" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@string/fragment_name4"
+                android:textColor="@color/tab_text_normal"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

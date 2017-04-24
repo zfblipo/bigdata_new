@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_blue_black"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <TextView
+        android:id="@+id/item_plan_guess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="推荐选项：平局"
+        android:textColor="@color/main_text9"
+        android:textSize="15sp"
+        android:layout_marginLeft="4dp"/>
+
+    <TextView
+        android:id="@+id/item_plan_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:text="主胜"
+        android:layout_marginRight="4dp"
+        android:textColor="@color/main_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/item_plan_result_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/item_plan_result"
+        android:text="开奖结果："
+        android:textColor="@color/main_text9"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/item_plan_result_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/item_plan_result_left"
+        android:src="@mipmap/game_state_miss" />
+
+    <LinearLayout
+        android:id="@+id/item_plan_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_plan_guess"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+
+        <ImageView
+            android:id="@+id/item_plan_host_icon"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:src="@drawable/no_icon" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_plan_game_sn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="104"
+                android:textColor="@color/main_text9"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/item_plan_game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="阿甲  已完场"
+                android:textColor="@color/main_text9"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/item_plan_game_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1:0"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/item_plan_away_icon"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:src="@drawable/no_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/item_plan_game"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/item_plan_text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/white_lborder"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/item_plan_host_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圣洛伦索"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/item_plan_race1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主胜  1.50"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/main_text9"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_plan_text2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/white_lborder"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/item_plan_textvs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vs"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/item_plan_race2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主胜  1.50"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/main_text9"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/item_plan_text3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/white_lborder"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/item_plan_away_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="圣洛伦索"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/item_plan_race3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主胜  1.50"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/main_text9"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

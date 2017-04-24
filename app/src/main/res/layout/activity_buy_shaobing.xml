@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg" >
+
+    <include
+        android:id="@+id/buy_shaobing_top"
+        layout="@layout/cell_title" />
+
+    <TextView
+        android:id="@+id/buy_shaobing_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_color"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:text="立即支付  0元"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buy_shaobing_bottom"
+        android:layout_below="@+id/buy_shaobing_top"
+        android:paddingBottom="16dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="16dp"
+                android:background="@color/main_line" />
+
+            <TextView
+                android:id="@+id/buy_shaobing_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingBottom="15dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="15dp"
+                android:text="购买数量：0"
+                android:textColor="@color/main_text3"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/main_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="15dp"
+                    android:text="请选择："
+                    android:textColor="@color/main_text6"
+                    android:textSize="14sp" />
+
+                <com.lipo.views.NoScrollGirdView
+                    android:id="@+id/buy_shaobing_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="3"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:verticalSpacing="10dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/main_line" />
+
+            <include
+                android:id="@+id/buy_shaobing_pay"
+                layout="@layout/cell_pay" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

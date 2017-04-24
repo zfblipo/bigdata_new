@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="12dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="12dp">
+
+    <TextView
+        android:id="@+id/item_game_sample_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="2016-05-09"
+        android:textColor="@color/main_text6"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/item_game_sample_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:text="亚冠亚冠"
+        android:textColor="@color/main_text6"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/item_game_sample_team"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="12"
+        android:gravity="center"
+        android:text="阿德莱德联 3-3 阿德莱德联"
+        android:textColor="@color/main_text6"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/item_game_sample_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:gravity="center"
+        android:background="@color/sample_fail"
+        android:text="平"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:textColor="@color/white"
+        android:textSize="13dp" />
+
+</LinearLayout>

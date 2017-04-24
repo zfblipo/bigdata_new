@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/maind_status"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/main_blue_black" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main_blue_black"
+        android:gravity="center"
+        android:text="我的"
+        android:textColor="@color/white"
+        android:textSize="17dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/main_line_green" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/maind_login_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_blue_black"
+                android:paddingBottom="18dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="18dp">
+
+                <com.lipo.views.RoundedImageView
+                    android:id="@+id/maind_head"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@mipmap/no_avatar" />
+
+                <TextView
+                    android:id="@+id/maind_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/maind_head"
+                    android:text="立即登录"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/maind_nicket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/maind_head"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/maind_head"
+                    android:text="不懂球也玩比赛预测"
+                    android:textColor="@color/main_text6"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_blue_black2"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:id="@+id/maind_icon1"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@mipmap/ic_user_center_ball_coin" />
+
+                    <TextView
+                        android:id="@+id/maind_shaobin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/maind_icon1"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/maind_icon1"
+                        android:text="球币"
+                        android:textColor="@color/main_orange_text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/maind_icon1"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/maind_shaobin"
+                        android:text="用于查看比赛预测方案"
+                        android:textColor="@color/main_text6"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/maind_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/maind_icon1"
+                        android:layout_marginTop="8dp"
+                        android:text="0.00"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/maind_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/main_buy_border"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="7dp"
+                    android:text="购买球币"
+                    android:textColor="@color/main_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_vip"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/main_line" />-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_have"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_account"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"
+                android:src="@color/main_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_gif"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_coupon"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/main_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_phone"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/white"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@color/main_line" />
+
+            <include
+                android:id="@+id/maind_help"
+                layout="@layout/cell_item_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/main_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="8dp"
+                android:background="@color/main_line" />
+
+            <TextView
+                android:id="@+id/maind_quit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingBottom="14dp"
+                android:paddingTop="14dp"
+                android:text="退出登录"
+                android:textColor="@color/main_color"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="16dp"
+                android:background="@color/main_line" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

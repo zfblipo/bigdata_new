@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="left"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text_viewflipper_item1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="恭喜"
+        android:textColor="@color/main_text6" />
+
+    <TextView
+        android:id="@+id/item_flipper_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text_viewflipper_item1"
+        android:paddingLeft="4dp"
+        android:text="我本将心向明月"
+        android:textColor="#31A5EC" />
+
+    <TextView
+        android:id="@+id/item_flipper_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_flipper_name"
+        android:paddingLeft="4dp"
+        android:text="获得"
+        android:textColor="@color/main_text9" />
+
+    <TextView
+        android:id="@+id/item_flipper_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/item_flipper_time"
+        android:lines="1"
+        android:paddingLeft="4dp"
+        android:textColor="@color/main_text6" />
+
+    <ImageView
+        android:id="@+id/mainf_head_next"
+        android:layout_width="8dp"
+        android:layout_height="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/disclosure" />
+
+</RelativeLayout>

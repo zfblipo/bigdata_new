@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/main_bg" >
+
+    <LinearLayout
+        android:id="@+id/main1a_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/main1a_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周二  2017-03-21 "
+            android:textColor="@color/main_text3"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/main1a_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(21场比赛)"
+            android:textColor="@color/main_text6"
+            android:textSize="13sp" />
+    </LinearLayout>
+    
+    <include 
+        android:id="@+id/main1a_pull"
+        layout="@layout/cell_pull_list"
+        />
+
+</LinearLayout>
