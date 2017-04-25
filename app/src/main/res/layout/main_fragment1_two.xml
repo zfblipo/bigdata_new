@@ -12,7 +12,18 @@
 
     <include
         android:id="@+id/main1_two_top"
-        layout="@layout/cell_title" />
+        layout="@layout/cell_title"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="竞彩足球"
+        android:textColor="@color/white"
+        android:background="@color/main_color"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="3dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
