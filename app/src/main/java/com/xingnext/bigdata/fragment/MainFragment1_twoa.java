@@ -37,6 +37,7 @@ import java.util.Map;
 public class MainFragment1_twoa extends BaseFragment {
 
     public static String type_id = "1";
+    private int start_temp;
 
     private View mainView;
     private boolean isVisibleToUser;
@@ -68,7 +69,7 @@ public class MainFragment1_twoa extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+        start_temp = getArguments().getInt("start_temp", 1);
         return mainView = inflater.inflate(R.layout.main_fragment1_twoa, null);
     }
 
@@ -234,22 +235,23 @@ public class MainFragment1_twoa extends BaseFragment {
         page = 1;
         getData();
     }
-
     private void getData() {
         String url = MyUrl.getMatchList;
+
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", page + "");
         params.put("type_id", type_id);
         params.put("period_sn", period_sn);
+        if(start_temp == 1){
+            params.put("tab", "best");
+        }
 
-        httpConn.httpGet(url, params, new MyHttpConn.OnCallBack() {
+        httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
                 pullHelper.setRefreshComplete();
-                if(isRefreshSn){
-                    fillGrid(json);
-                }
                 fillPull(json);
+                fillGrid(json);
             }
 
             @Override
@@ -265,7 +267,7 @@ public class MainFragment1_twoa extends BaseFragment {
         int lent = 0;
         if (data != null && data.length() > 0) {
             JSONObject dataJson = data.optJSONObject(0);
-
+            period_sn = dataJson.optString("period_sn");
             JSONArray match_list = dataJson.optJSONArray("match_list");
 
             if (page == 1) {
@@ -316,9 +318,10 @@ public class MainFragment1_twoa extends BaseFragment {
                     String jsonObj = period_sn_list.optString(i);
                     GameTypeInfo gameTypeInfo = new GameTypeInfo();
                     gameTypeInfo.setTitle(jsonObj);
-                    if (i == 0) {
+                    if (gameTypeInfo.getTitle().equals(period_sn)) {
                         gameTypeInfo.setChoiced(true);
                         maina_twoa_content.setText(jsonObj);
+                        typePosition = i;
                     } else {
                         gameTypeInfo.setChoiced(false);
                     }

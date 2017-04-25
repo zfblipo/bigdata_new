@@ -158,6 +158,14 @@ public abstract class PullListViewHelperNew {
 		footerView.setVisibility(View.VISIBLE);
 	}
 
+	public void setHeaderDividersEnabled(boolean headerDividersEnabled){
+		listView.setHeaderDividersEnabled(headerDividersEnabled);
+	}
+
+	public void addHeaderView(View v){
+		listView.addHeaderView(v);
+	}
+
 	protected abstract void pullRefersh();
 
 	protected abstract void pullMore();

@@ -31,7 +31,7 @@ import java.util.Map;
  */
 public class MainFragment1_twob extends BaseFragment {
 
-    private int start_temp;
+
     private View mainView;
     private boolean isVisibleToUser;
     private boolean isCreated = false;
@@ -52,7 +52,7 @@ public class MainFragment1_twob extends BaseFragment {
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        start_temp = getArguments().getInt("start_temp", 1);
+
         return mainView = inflater.inflate(R.layout.main_fragment1_twob, null);
     }
 
@@ -77,11 +77,11 @@ public class MainFragment1_twob extends BaseFragment {
         maintwob_title = findViewById(R.id.maintwob_title);
 
 
-        if (start_temp == 2) {
-            maintwob_title.setVisibility(View.VISIBLE);
-        }else {
-            maintwob_title.setVisibility(View.GONE);
-        }
+//        if (start_temp == 2) {
+//            maintwob_title.setVisibility(View.VISIBLE);
+//        }else {
+//            maintwob_title.setVisibility(View.GONE);
+//        }
     }
     private View findViewById(int id) {
         return mainView.findViewById(id);
@@ -134,8 +134,9 @@ public class MainFragment1_twob extends BaseFragment {
         String url = MyUrl.getMatchList;
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", page + "");
-        params.put("type_id", "1");
-        params.put("period_sn", "");
+//        params.put("type_id", "1");
+//        params.put("period_sn", "");
+        params.put("tab", "fav");
 
         httpConn.httpGet(url, params, new MyHttpConn.OnCallBack() {
             @Override

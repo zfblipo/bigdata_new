@@ -150,15 +150,17 @@ public class MainFragment1_two extends BaseFragment {
         });
 
         twoaFragment1 = new MainFragment1_twoa();
-        MainFragment1_twob twoaFragment2 = new MainFragment1_twob();
+        Bundle bundle3 = new Bundle();
+        bundle3.putInt("start_temp", 0);
+        twoaFragment1.setArguments(bundle3);
+
+        MainFragment1_twoa twoaFragment2 = new MainFragment1_twoa();
         Bundle bundle2 = new Bundle();
         bundle2.putInt("start_temp", 1);
         twoaFragment2.setArguments(bundle2);
 
         MainFragment1_twob twoaFragment3 = new MainFragment1_twob();
-        Bundle bundle3 = new Bundle();
-        bundle3.putInt("start_temp", 2);
-        twoaFragment3.setArguments(bundle3);
+
 
         fragments.add(twoaFragment1);
         fragments.add(twoaFragment2);

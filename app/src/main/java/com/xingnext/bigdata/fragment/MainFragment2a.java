@@ -45,10 +45,12 @@ public class MainFragment2a extends BaseFragment {
     private Gson gson;
     private MyHttpConn httpConn;
     private int page;
+    private LayoutInflater inflater;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        this.inflater = inflater;
         return mainView = inflater.inflate(R.layout.cell_pull_list,null);
     }
 
@@ -101,14 +103,18 @@ public class MainFragment2a extends BaseFragment {
         pullHelper.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intentI = new Intent();
-                intentI.putExtra("recom_id",recomInfos.get(position).getId());
-                startIntent(intentI, GameRecomDetailActivity.class);
+                if(position>0){
+                    position--;
+                    Intent intentI = new Intent();
+                    intentI.putExtra("recom_id",recomInfos.get(position).getId());
+                    startIntent(intentI, GameRecomDetailActivity.class);
+                }
+
             }
         });
 
         pullHelper.setDivider(R.color.main_bg, DisplayUtil.dip2px(getActivity(),8));
-
+        pullHelper.addHeaderView(inflater.inflate(R.layout.cell_line8,null));
     }
 
     private void initAdapter(){

@@ -1,5 +1,6 @@
 package com.xingnext.bigdata.fragment;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,16 +39,17 @@ import java.util.Map;
  */
 public class MainFragment4 extends BaseFragment {
 
-    private View mainView,maind_status,maind_login_head;
+    private View mainView, maind_status, maind_login_head;
 
     private RoundedImageView maind_head;
-    private TextView maind_name, maind_nicket, maind_buy,maind_money;
-    private View maind_have, maind_account,maind_gif, maind_coupon,
+    private TextView maind_name, maind_nicket, maind_buy, maind_money;
+    private View maind_have, maind_account, maind_gif, maind_coupon,
             maind_phone, maind_help, maind_quit;
-    private ItemNextHelper  haveHelper, accountHelper,gifHelper, couponHelper,
+    private ItemNextHelper haveHelper, accountHelper, gifHelper, couponHelper,
             phoneHelper, helpHelper;//vipHelper,
 
-//    private View maind_vip;
+    //    private View maind_vip;
+    private boolean isLogin = false;
 
     private MyHttpConn httpConn;
     private Gson gson;
@@ -66,7 +68,7 @@ public class MainFragment4 extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        httpConn = new MyHttpConn(mContext,false);
+        httpConn = new MyHttpConn(mContext, false);
         gson = new Gson();
 
         initView();
@@ -75,8 +77,8 @@ public class MainFragment4 extends BaseFragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if(!hidden){
-            if(!MyStatic.userData.access_token.isEmpty()){
+        if (!hidden) {
+            if (!MyStatic.userData.access_token.isEmpty()) {
                 getData();
             }
         }
@@ -129,11 +131,11 @@ public class MainFragment4 extends BaseFragment {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             maind_status = mainView.findViewById(R.id.maind_status);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,55);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 55);
             maind_status.setLayoutParams(params);
         }
 
-        if(!MyStatic.userData.access_token.isEmpty()){
+        if (!MyStatic.userData.access_token.isEmpty()) {
             maind_money.setVisibility(View.VISIBLE);
         }
 
@@ -145,28 +147,33 @@ public class MainFragment4 extends BaseFragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.maind_buy:
-                    toLogin();
-                    startIntent(RechareWebActivity.class);
+                    if (toLogin()) {
+                        startIntent(RechareWebActivity.class);
+                    }
 //                    startIntent(BuyShaobingActivity.class);
                     break;
 //                case R.id.maind_vip:
 //
 //                    break;
                 case R.id.maind_have:
-                    toLogin();
-                    startIntent(MyreadRecordActivity.class);
+                    if (toLogin()) {
+                        startIntent(MyreadRecordActivity.class);
+                    }
                     break;
                 case R.id.maind_account:
-                    toLogin();
-                    startIntent(MyAccountActivity.class);
+                    if (toLogin()) {
+                        startIntent(MyAccountActivity.class);
+                    }
                     break;
                 case R.id.maind_gif:
-                    toLogin();
-                    startIntent(GifWebActivity.class);
+                    if (toLogin()) {
+                        startIntent(GifWebActivity.class);
+                    }
                     break;
                 case R.id.maind_coupon:
-                    toLogin();
-                    startIntent(CouponWebActivity.class);
+                    if (toLogin()) {
+                        startIntent(CouponWebActivity.class);
+                    }
                     break;
                 case R.id.maind_phone:
 
@@ -176,23 +183,28 @@ public class MainFragment4 extends BaseFragment {
                     break;
                 case R.id.maind_quit:
                     BaseApplication.quitPreferences();
-                    startIntent(LoginActivity.class);
+                    Intent intentL = new Intent();
+                    intentL.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    getActivity().finish();
+                    startIntent(intentL, LoginActivity.class);
                     break;
                 case R.id.maind_login_head:
-                    toLogin();
+                    if (toLogin()) {
+                    }
+
                     break;
             }
         }
     };
 
-    private void getData(){
+    private void getData() {
         String url = MyUrl.userUrl;
         Map<String, String> params = new HashMap<String, String>();
         httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
                 String data = json.optString("data");
-                userInfo = gson.fromJson(data,UserInfo.class);
+                userInfo = gson.fromJson(data, UserInfo.class);
                 fillData();
             }
 
@@ -203,9 +215,9 @@ public class MainFragment4 extends BaseFragment {
         });
     }
 
-    private void fillData(){
-        if(!headUrl.equals(userInfo.getPic())){
-            MyImageLoader.loaderHead(mContext,maind_head,userInfo.getPic());
+    private void fillData() {
+        if (!headUrl.equals(userInfo.getPic())) {
+            MyImageLoader.loaderHead(mContext, maind_head, userInfo.getPic());
             headUrl = userInfo.getPic();
         }
 
@@ -214,11 +226,13 @@ public class MainFragment4 extends BaseFragment {
         maind_money.setText(userInfo.getMoney());
     }
 
-    private void toLogin(){
-        if(MyStatic.userData.access_token.isEmpty()){
+    private boolean toLogin() {
+        if (MyStatic.userData.access_token == null || "".equals(MyStatic.userData.access_token)) {
             startIntent(LoginActivity.class);
-            return;
+            return false;
         }
+
+        return true;
     }
 
 }
