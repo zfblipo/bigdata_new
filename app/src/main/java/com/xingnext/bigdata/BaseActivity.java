@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
+import com.umeng.analytics.MobclickAgent;
+
 /**
  * Created by lipo on 2017/3/12.
  */
@@ -17,6 +19,7 @@ public class BaseActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         mContext = this;
+		MobclickAgent.openActivityDurationTrack(false);
 
     }
     
@@ -53,5 +56,15 @@ public class BaseActivity extends Activity {
 		}
 		return super.onKeyDown(keyCode, event);
 	}
+	@Override
+	protected void onResume() {
+		super.onResume();
+		MobclickAgent.onResume(mContext);
+	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		MobclickAgent.onPause(mContext);
+	}
 }

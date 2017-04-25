@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 
+import com.umeng.analytics.MobclickAgent;
+
 /**
  * Created by lipo on 2017/3/12.
  */
@@ -19,6 +21,7 @@ public class BaseFragmentActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         mContext = this;
+        MobclickAgent.openActivityDurationTrack(false);
     }
 
 
@@ -54,6 +57,18 @@ public class BaseFragmentActivity extends FragmentActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(mContext);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(mContext);
     }
 
 }

@@ -55,6 +55,17 @@
             android:name=".MainActivity"
             android:theme="@style/AppNoBarTheme" />
         <activity android:name=".RechareWebActivity"></activity>
+
+        <!-- youmeng -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58f78313f29d980488001aea" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Jumi" >
+        </meta-data>
+
     </application>
 
 </manifest>

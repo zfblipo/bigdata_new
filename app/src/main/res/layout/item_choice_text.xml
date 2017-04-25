@@ -14,13 +14,12 @@
         android:gravity="center"
         android:textSize="14sp"/>
 
-    <com.xingnext.bigdata.views.RoundRightBottomImageView
+    <ImageView
         android:id="@+id/item_choice_text_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_width="33dp"
+        android:layout_height="28dp"
         android:src="@mipmap/choice_icon"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="-2dp"/>
+        android:layout_marginTop="15dp"/>
 
 </RelativeLayout>

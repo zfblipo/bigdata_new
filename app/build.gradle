@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.0"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.xingnext.jumi"
@@ -38,4 +38,5 @@ dependencies {
     compile files('libs/gson-2.6.2.jar')
     compile 'com.prolificinteractive:material-calendarview:1.4.3'
     compile files('libs/alipaySdk-20170407.jar')
+    compile 'com.umeng.analytics:analytics:6.1.0'
 }
