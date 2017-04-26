@@ -107,7 +107,7 @@ public class GameDetailActivity extends BaseActivity {
                 } else {
                     if (titleMode != 0) {
                         titleMode = 0;
-                        titleBackHelper.setTitleBg(0);
+                        titleBackHelper.setTitleBg(R.color.transparent);
                     }
                 }
 
@@ -204,8 +204,8 @@ public class GameDetailActivity extends BaseActivity {
 
             List<String> odds_ou = gameInfo.getOdds_ou();
             List<String> odds_ya = gameInfo.getOdds_yp();
-            game_detail_odds_ou.setText("欧      "+odds_ou.get(0)+"  "+odds_ou.get(1)+"  "+odds_ou.get(2));
-            game_detail_odds_yp.setText("亚      "+odds_ya.get(0)+"  "+odds_ya.get(1)+"  "+odds_ya.get(2));
+            game_detail_odds_ou.setText("欧    "+odds_ou.get(0)+"  "+odds_ou.get(1)+"  "+odds_ou.get(2));
+            game_detail_odds_yp.setText("亚    "+odds_ya.get(0)+"  "+odds_ya.get(1)+"  "+odds_ya.get(2));
             game_detail_ai_match.setText(gameInfo.getAi_match_count());
             game_detail_ai_model.setText(gameInfo.getAi_model_count());
             game_detail_ai_rule.setText(gameInfo.getAi_rule_count());

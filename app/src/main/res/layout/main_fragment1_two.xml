@@ -14,16 +14,6 @@
         android:id="@+id/main1_two_top"
         layout="@layout/cell_title"
         android:visibility="gone"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="竞彩足球"
-        android:textColor="@color/white"
-        android:background="@color/main_color"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:paddingTop="10dp"
-        android:paddingBottom="3dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,6 +55,7 @@
                 android:layout_width="12dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_marginBottom="-2px"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/sanjiao_icon" />
 
@@ -83,7 +74,7 @@
                 android:text="精选"
                 android:layout_centerInParent="true"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
 
             <ImageView
@@ -93,6 +84,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/sanjiao_icon"
+                android:layout_marginBottom="-2px"
                 android:visibility="gone"/>
 
         </RelativeLayout>
@@ -120,6 +112,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:src="@mipmap/sanjiao_icon"
+                android:layout_marginBottom="-2px"
                 android:visibility="gone"/>
 
         </RelativeLayout>

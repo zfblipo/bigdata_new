@@ -118,7 +118,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="6dp"
             android:layout_toRightOf="@+id/item_game_recom_type"
-            android:text="周日033 意甲 03-12 22:00 开赛"
+            android:text=""
             android:textColor="@color/main_text9"
             android:textSize="13sp" />
 

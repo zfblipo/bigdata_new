@@ -233,6 +233,7 @@ public class MainFragment1_twoa extends BaseFragment {
     public void refreshSn() {
         isRefreshSn = true;
         page = 1;
+        typePosition = 0;
         getData();
     }
     private void getData() {
@@ -265,14 +266,14 @@ public class MainFragment1_twoa extends BaseFragment {
     private void fillPull(JSONObject json) {
         JSONArray data = json.optJSONArray("data");
         int lent = 0;
+        if (page == 1) {
+            gameInfos.clear();
+        }
         if (data != null && data.length() > 0) {
             JSONObject dataJson = data.optJSONObject(0);
             period_sn = dataJson.optString("period_sn");
             JSONArray match_list = dataJson.optJSONArray("match_list");
 
-            if (page == 1) {
-                gameInfos.clear();
-            }
             if (match_list != null) {
                 lent = match_list.length();
                 for (int i = 0; i < lent; i++) {
@@ -331,6 +332,11 @@ public class MainFragment1_twoa extends BaseFragment {
                     isRefreshSn = false;
                 }
             }
+        }
+
+        if(typePosition == 0){
+            gameTypeInfos.get(0).setChoiced(true);
+            maina_twoa_content.setText(gameTypeInfos.get(0).getTitle());
         }
 
         textChoiceAdapter = new TextChoiceAdapter(mContext, gameTypeInfos);

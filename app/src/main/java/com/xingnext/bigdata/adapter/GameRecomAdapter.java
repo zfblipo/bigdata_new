@@ -128,7 +128,7 @@ public class GameRecomAdapter extends BaseAdapter {
 			if(lent == 1){
 				holder.item_game_recom_type.setText("单场");
 				GameInfo gameInfo = info.getMatch_list().get(0);
-				holder.item_game_recom_time.setText(gameInfo.getMatch_sn()+"  "+gameInfo.getSeason_pre()+"  "+gameInfo.getMatch_time()+"开赛");
+				holder.item_game_recom_time.setText(gameInfo.getSeason_pre()+"  "+gameInfo.getMatch_time()+"开赛");
 				MyImageLoader.loader(context,holder.item_game_recom_team_icon1,gameInfo.getHost_team_image());
 				MyImageLoader.loader(context,holder.item_game_recom_team_icon2,gameInfo.getAway_team_image());
 				holder.item_game_recom_team_name1.setText(gameInfo.getHost_name());
@@ -140,8 +140,11 @@ public class GameRecomAdapter extends BaseAdapter {
 				if(!info.getTitle().isEmpty()){
 					holder.item_game_recom_content.setText(info.getTitle());
 				}
+				holder.item_game_recom_time.setText(info.getCreate_time());
 			}
+
 		}
+
 		holder.item_game_recom_price.setText(info.getPrice()+"球币");
 		holder.item_game_recom_infor.setText(info.getRemark());
 		holder.item_game_recom_count.setText(info.getOrder_count()+"人订阅");

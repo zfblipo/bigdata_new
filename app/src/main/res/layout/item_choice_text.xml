@@ -20,6 +20,6 @@
         android:layout_height="28dp"
         android:src="@mipmap/choice_icon"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="14dp"/>
 
 </RelativeLayout>

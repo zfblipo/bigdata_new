@@ -219,7 +219,7 @@ public class MatchAdapter extends BaseAdapter {
             }
 
             holder.item_match_history_winstate.setVisibility(View.VISIBLE);
-
+            holder.item_match_state.setVisibility(View.GONE);
             if (isRight) {
                 holder.item_match_history_winstate.setText("命中");
                 holder.item_match_history_winstate.setBackgroundResource(R.color.main_color);
@@ -254,7 +254,7 @@ public class MatchAdapter extends BaseAdapter {
             holder.item_match_price.setText(info.getPrice() + "球币");
             holder.item_match_persons.setText(info.getOrder_count() + "人订阅");
         }
-
+        holder.item_match_state.setVisibility(View.VISIBLE);
         holder.item_match_win_icon.setImageResource(g0);
         holder.item_match_draw_icon.setImageResource(g1);
         holder.item_match_failure_icon.setImageResource(g2);
