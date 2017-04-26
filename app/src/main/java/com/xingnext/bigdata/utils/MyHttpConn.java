@@ -185,7 +185,7 @@ public class MyHttpConn {
             Intent intent = new Intent();
             intent.setClass(context, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            ((Activity)context).finish();
+//            ((Activity)context).finish();
             ((Activity)context).startActivity(intent);
             ((Activity)context).overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
         }else{

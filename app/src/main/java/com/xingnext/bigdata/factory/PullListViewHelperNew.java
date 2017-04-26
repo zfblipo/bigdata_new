@@ -31,7 +31,7 @@ public abstract class PullListViewHelperNew {
 
 	private ImageView pull_footer_progress;
 	private TextView pull_footer_text;
-	private View pull_footer_line, pull_footer_more;
+	private View pull_footer_line, pull_footer_more,cell_pull_list_empty_content;
 
 	private View emptyView;
 
@@ -47,6 +47,7 @@ public abstract class PullListViewHelperNew {
 	private void initView() {
 		swipeLayout = (SwipeRefreshLayout) mainView.findViewById(R.id.cell_pull_list_swipe);
 		listView = (ListView) mainView.findViewById(R.id.cell_pull_list_view);
+		cell_pull_list_empty_content = mainView.findViewById(R.id.cell_pull_list_empty_content);
 		footerView = inflater.inflate(R.layout.pull_footer, null);
 		emptyView = inflater.inflate(R.layout.cell_empty, null);
 		listView.addFooterView(footerView);
@@ -103,8 +104,8 @@ public abstract class PullListViewHelperNew {
 					}
 				});
 
-		setEmptyShow();
-
+		isPullMoreEnable = false;
+		footerView.setVisibility(View.GONE);
 	}
 
 	public void setRefreshComplete() {
@@ -150,11 +151,13 @@ public abstract class PullListViewHelperNew {
 
 	public void setEmptyShow(){
 		isPullMoreEnable = false;
+		cell_pull_list_empty_content.setVisibility(View.VISIBLE);
 		footerView.setVisibility(View.GONE);
 	}
 
 	public void setEmptyDismiss(){
 		isPullMoreEnable = true;
+		cell_pull_list_empty_content.setVisibility(View.GONE);
 		footerView.setVisibility(View.VISIBLE);
 	}
 

@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.xingnext.bigdata.beans.GameTypeInfo;
 import com.xingnext.bigdata.beans.VersionInfo;
 import com.xingnext.bigdata.factory.APPUploadHelper;
+import com.xingnext.bigdata.fragment.MainFragment1_two;
 import com.xingnext.bigdata.utils.MyHttpConn;
 import com.xingnext.bigdata.utils.MyImageLoader;
 import com.xingnext.bigdata.utils.MyStatic;
@@ -113,15 +114,27 @@ public class MainActivity extends BaseFragmentActivity {
                 changeLayout(0);
                 break;
             case R.id.layout2:
+                dismissView();
                 changeLayout(1);
                 break;
             case R.id.layout3:
-                changeLayout(2);
+                dismissView();
+//                changeLayout(2);
+                if(MyStatic.userData.access_token == null||"".equals(MyStatic.userData.access_token)){
+                    startIntent(LoginActivity.class);
+                }else{
+                    startIntent(ProfitWebActivity.class);
+                }
                 break;
             case R.id.layout4:
+                dismissView();
                 changeLayout(3);
                 break;
         }
+    }
+
+    private void dismissView(){
+        ((MainFragment1_two)fragments[0]).dismissLabel();
     }
 
     private void getStartup() {

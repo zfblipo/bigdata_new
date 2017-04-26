@@ -51,6 +51,7 @@ public class MyUrl {
     public static String gifWebUrl = key_web+"app/luckywheel";
     public static String checkWebUrl = key_web+"order/check";
     public static String couponWebUrl = key_web+"coupon";
+    public static String profitWebUrl = key_web+"plan";
 
 
 }

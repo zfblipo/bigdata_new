@@ -134,11 +134,11 @@ public class MainFragment1_twob extends BaseFragment {
         String url = MyUrl.getMatchList;
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", page + "");
-//        params.put("type_id", "1");
+//        params.put("type_id", "");
 //        params.put("period_sn", "");
         params.put("tab", "fav");
 
-        httpConn.httpGet(url, params, new MyHttpConn.OnCallBack() {
+        httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
                 pullHelper.setRefreshComplete();
@@ -156,14 +156,14 @@ public class MainFragment1_twob extends BaseFragment {
     private void fillPull(JSONObject json) {
         JSONArray data = json.optJSONArray("data");
         int lent = 0;
+        if (page == 1) {
+            gameInfos.clear();
+        }
         if (data != null && data.length() > 0) {
             JSONObject dataJson = data.optJSONObject(0);
 
             JSONArray match_list = dataJson.optJSONArray("match_list");
 
-            if (page == 1) {
-                gameInfos.clear();
-            }
             if (match_list != null) {
                 lent = match_list.length();
                 for (int i = 0; i < lent; i++) {

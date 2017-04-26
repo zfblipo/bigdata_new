@@ -51,7 +51,7 @@ public class MainFragment1_two extends BaseFragment {
     private boolean isShowType = false;
 
     private List<Fragment> fragments;
-    private MainFragment1_twoa twoaFragment1;
+    private MainFragment1_twoa twoaFragment1,twoaFragment2;
 
     @Nullable
     @Override
@@ -154,7 +154,7 @@ public class MainFragment1_two extends BaseFragment {
         bundle3.putInt("start_temp", 0);
         twoaFragment1.setArguments(bundle3);
 
-        MainFragment1_twoa twoaFragment2 = new MainFragment1_twoa();
+        twoaFragment2 = new MainFragment1_twoa();
         Bundle bundle2 = new Bundle();
         bundle2.putInt("start_temp", 1);
         twoaFragment2.setArguments(bundle2);
@@ -178,6 +178,7 @@ public class MainFragment1_two extends BaseFragment {
                         if(isShowType){
                             dismissLabel();
                         }else{
+                            dismissView();
                             showLabel();
                         }
 
@@ -206,6 +207,14 @@ public class MainFragment1_two extends BaseFragment {
         }
     };
 
+    private void dismissView(){
+        if(tempPosition == 0){
+            twoaFragment1.dismissLabel();
+        }
+        if(tempPosition == 1){
+            twoaFragment2.dismissLabel();
+        }
+    }
 
     private void showLabel(){
         if(!isShowType){
@@ -216,12 +225,13 @@ public class MainFragment1_two extends BaseFragment {
         }
     }
 
-    private void dismissLabel(){
+    public void dismissLabel(){
         if(isShowType){
             isShowType = false;
             maina_two_remark.setVisibility(View.GONE);
             maina_two_label.setVisibility(View.GONE);
             maina_two_item1_next.setImageResource(R.mipmap.up_icon);
+            dismissView();
         }
     }
 

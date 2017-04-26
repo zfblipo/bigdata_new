@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">聚米足球</string>
 
-    <string name="fragment_name1">首页</string>
+    <string name="fragment_name1">比分预测</string>
     <string name="fragment_name2">红单推荐</string>
-    <string name="fragment_name3">历史战绩</string>
+    <string name="fragment_name3">盈利计划</string>
     <string name="fragment_name4">我的</string>
 
     <string name="detail_prompt">以上言论仅代表发布者个人的观点，于本平台无关\n本平台不承担任何法律责任。</string>

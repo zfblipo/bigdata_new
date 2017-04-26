@@ -221,7 +221,7 @@ public class MainFragment1_twoa extends BaseFragment {
         }
     }
 
-    private void dismissLabel() {
+    public void dismissLabel() {
         if (isShowType) {
             isShowType = false;
             maina_twoa_remark.setVisibility(View.GONE);

@@ -28,7 +28,7 @@ public class StartActivity extends BaseActivity {
         }
 
         deleteApk();
-        handler.postDelayed(task, 2000);
+        handler.postDelayed(task, 3000);
 
     }
 
