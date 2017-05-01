@@ -22,6 +22,7 @@ public class MyUrl {
     public static String getSampleList = key+"match/sample/";//分析样本
 
     public static String noticeList = key+"notice/market";//公告接口
+    public static String favoriteList = key+"match/favorite";//公告接口
 
     /**
      * 注册登录

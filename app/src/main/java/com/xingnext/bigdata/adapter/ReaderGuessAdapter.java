@@ -149,7 +149,7 @@ public class ReaderGuessAdapter extends BaseAdapter {
         int g1 = R.mipmap.check_middle_icon;
         int g2 = R.mipmap.check_middle_icon;
         String forecast = info.getForecast();
-        if (!forecast.isEmpty()) {
+        if (forecast!=null&&!"".equals(forecast)) {
             String[] fores = forecast.split(",");
             for (int i = 0; i < fores.length; i++) {
                 if ("3".equals(fores[i])) {
@@ -162,7 +162,7 @@ public class ReaderGuessAdapter extends BaseAdapter {
             }
         }
 
-        if ("4".equals(info.getMatch_status())) {
+        if ("10".equals(info.getMatch_status())) {
             if (info.getHost_score() > info.getAway_score()) {
                 g0 = R.mipmap.check_win_icon;
             } else if (info.getHost_score() == info.getAway_score()) {

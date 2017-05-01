@@ -1,5 +1,7 @@
 package com.xingnext.bigdata.beans;
 
+import com.xingnext.bigdata.utils.MyPublic;
+
 import org.json.JSONArray;
 
 import java.io.Serializable;
@@ -23,12 +25,12 @@ public class GameInfo implements Serializable {
     private String host_name;
     private String host_team_image;
     private String host_rank;
-    private int host_score;
+    private String host_score;
     private String away_id;
     private String away_name;
     private String away_team_image;
     private String away_rank;
-    private int away_score;
+    private String away_score;
     private String match_status;
     private String match_status_desc;
     private String match_title;
@@ -41,6 +43,7 @@ public class GameInfo implements Serializable {
     private String spf1;
     private String spf2;
     private String order_status;//当前用户订阅状态，1已订阅，0未订阅
+    private String is_favorite;//关注状态，1已关注，0未关注
 
     private String host_power;
     private String away_power;
@@ -150,18 +153,18 @@ public class GameInfo implements Serializable {
     }
 
     public int getHost_score() {
-        return host_score;
+        return MyPublic.stringToInt(host_score);
     }
 
-    public void setHost_score(int host_score) {
+    public void setHost_score(String host_score) {
         this.host_score = host_score;
     }
 
     public int getAway_score() {
-        return away_score;
+        return MyPublic.stringToInt(away_score);
     }
 
-    public void setAway_score(int away_score) {
+    public void setAway_score(String away_score) {
         this.away_score = away_score;
     }
 
@@ -279,7 +282,12 @@ public class GameInfo implements Serializable {
     }
 
     public List<String> getSpf() {
-        if (spf == null || spf.size() != 3) {
+        if (spf == null){
+            spf = new ArrayList<String>();
+            spf.add("");
+            spf.add("");
+            spf.add("");
+        }else if(spf.size() != 3){
             spf.add("");
             spf.add("");
             spf.add("");
@@ -377,5 +385,13 @@ public class GameInfo implements Serializable {
 
     public void setForecast_lose(String forecast_lose) {
         this.forecast_lose = forecast_lose;
+    }
+
+    public String getIs_favorite() {
+        return is_favorite;
+    }
+
+    public void setIs_favorite(String is_favorite) {
+        this.is_favorite = is_favorite;
     }
 }

@@ -137,7 +137,7 @@ public class GameRecomAdapter extends BaseAdapter {
 			}else{
 				holder.item_game_recom_type.setText("串关");
 				holder.item_game_recom_content.setVisibility(View.VISIBLE);
-				if(!info.getTitle().isEmpty()){
+				if(!MyPublic.isEmpty(info.getTitle())){
 					holder.item_game_recom_content.setText(info.getTitle());
 				}
 				holder.item_game_recom_time.setText(info.getCreate_time());

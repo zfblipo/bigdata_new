@@ -48,9 +48,10 @@ public class MainFragment1_twoa extends BaseFragment {
     private Gson gson;
     private int page;
 
-    private TextView maina_twoa_up, maina_twoa_next, maina_twoa_content;
-    private View maina_twoa_middle, maina_twoa_pull, maina_twoa_remark;
+    private TextView maina_twoa_up, maina_twoa_next, maina_twoa_content,maintwoa_period_title;
+    private View maina_twoa_middle, maina_twoa_pull, maina_twoa_remark,maina_twoa_list;
     private ImageView maina_twoa_icon;
+
 
     private GridView maina_twoa_grid;
     private TextChoiceAdapter textChoiceAdapter;
@@ -111,6 +112,8 @@ public class MainFragment1_twoa extends BaseFragment {
         maina_twoa_remark = findViewById(R.id.maina_twoa_remark);
         maina_twoa_icon = (ImageView) findViewById(R.id.maina_twoa_icon);
         maina_twoa_grid = (GridView) findViewById(R.id.maina_twoa_grid);
+        maina_twoa_list = findViewById(R.id.maina_twoa_list);
+        maintwoa_period_title = (TextView) findViewById(R.id.maintwoa_period_title);
 
         maina_twoa_up.setOnClickListener(onclick);
         maina_twoa_next.setOnClickListener(onclick);
@@ -204,7 +207,6 @@ public class MainFragment1_twoa extends BaseFragment {
         gameTypeInfos.get(typePosition).setChoiced(false);
         period_sn = gameTypeInfo.getTitle();
         maina_twoa_content.setText(gameTypeInfo.getTitle());
-        MainFragment1_twoa.type_id = gameTypeInfo.getId();
         typePosition = pnew;
         textChoiceAdapter.notifyDataSetChanged();
 
@@ -234,6 +236,7 @@ public class MainFragment1_twoa extends BaseFragment {
         isRefreshSn = true;
         page = 1;
         typePosition = 0;
+        period_sn = "";
         getData();
     }
     private void getData() {
@@ -241,7 +244,9 @@ public class MainFragment1_twoa extends BaseFragment {
 
         Map<String, String> params = new HashMap<String, String>();
         params.put("page", page + "");
-        params.put("type_id", type_id);
+        if(start_temp == 0){
+            params.put("type_id", type_id);
+        }
         params.put("period_sn", period_sn);
         if(start_temp == 1){
             params.put("tab", "best");
@@ -251,6 +256,9 @@ public class MainFragment1_twoa extends BaseFragment {
             @Override
             public void Success(JSONObject json) {
                 pullHelper.setRefreshComplete();
+
+
+
                 fillPull(json);
                 fillGrid(json);
             }
@@ -272,6 +280,13 @@ public class MainFragment1_twoa extends BaseFragment {
         if (data != null && data.length() > 0) {
             JSONObject dataJson = data.optJSONObject(0);
             period_sn = dataJson.optString("period_sn");
+
+            String period_title = dataJson.optString("period_title");
+            if(period_title == null){
+                period_title = "";
+            }
+            maintwoa_period_title.setText(period_title);
+
             JSONArray match_list = dataJson.optJSONArray("match_list");
 
             if (match_list != null) {

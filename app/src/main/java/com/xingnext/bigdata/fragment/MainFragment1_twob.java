@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.xingnext.bigdata.GameDetailActivity;
@@ -43,6 +44,7 @@ public class MainFragment1_twob extends BaseFragment {
 
     private View maintwob_title,maintwob_pull;
 
+    private TextView maintwob_period_title;
     private PullListViewHelperNew pullHelper;
     private MatchAdapter adapter;
     private List<GameInfo> gameInfos;
@@ -75,6 +77,7 @@ public class MainFragment1_twob extends BaseFragment {
 
     private void initView() {
         maintwob_title = findViewById(R.id.maintwob_title);
+        maintwob_period_title = (TextView) findViewById(R.id.maintwob_period_title);
 
 
 //        if (start_temp == 2) {
@@ -161,6 +164,12 @@ public class MainFragment1_twob extends BaseFragment {
         }
         if (data != null && data.length() > 0) {
             JSONObject dataJson = data.optJSONObject(0);
+
+            String period_title = dataJson.optString("period_title");
+            if(period_title == null){
+                period_title = "";
+            }
+            maintwob_period_title.setText(period_title);
 
             JSONArray match_list = dataJson.optJSONArray("match_list");
 

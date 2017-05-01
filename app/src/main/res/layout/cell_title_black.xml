@@ -23,4 +23,14 @@
         android:textColor="@color/white"
         android:textSize="17sp" />
 
+    <ImageView
+        android:id="@+id/cell_title_black_icon"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/collect_no_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:visibility="gone"/>
+
 </RelativeLayout>

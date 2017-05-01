@@ -17,11 +17,11 @@ import java.util.Map;
  */
 public class MyPublic {
 
-    public static void setLog(String content){
-        Log.i("zfb_json",content);
+    public static void setLog(String content) {
+        Log.i("zfb_json", content);
     }
 
-    public static void getStatusHeight(Context context){
+    public static void getStatusHeight(Context context) {
         /**
          * 获取状态栏高度——方法1
          * */
@@ -78,15 +78,15 @@ public class MyPublic {
         return 0.0;
     }
 
-    public static int stringToInt(String str){
-        if(com.lipo.utils.MyPublic.isNumber(str)){
+    public static int stringToInt(String str) {
+        if (com.lipo.utils.MyPublic.isNumber(str)) {
             return Integer.valueOf(str).intValue();
         }
         return 0;
     }
 
-    public static double stringToDouble(String str){
-        if(str == null||"".equals(str)){
+    public static double stringToDouble(String str) {
+        if (str == null || "".equals(str)) {
             return 0.0;
         }
         return Double.valueOf(str).doubleValue();
@@ -94,26 +94,29 @@ public class MyPublic {
 
     /**
      * 字符串转换百分数
+     *
      * @param str
      * @return
      */
-    public static String stringToBFB(String str){
+    public static String stringToBFB(String str) {
 //        double number = com.lipo.utils.MyPublic.stringToDouble(str);
-        return str+"%";
+        return str + "%";
     }
 
     /**
      * 字符串转换百分数
+     *
      * @param str
      * @return
      */
-    public static String stringToBFB2(String str){
+    public static String stringToBFB2(String str) {
         double number = com.lipo.utils.MyPublic.stringToDouble(str);
-        return Arith.mul(number,100)+"%";
+        return Arith.mul(number, 100) + "%";
     }
 
     /**
      * 获取user-agent
+     *
      * @param context
      * @return
      */
@@ -138,9 +141,16 @@ public class MyPublic {
             }
         }
 
-        sb.insert(sb.indexOf("Linux;")+6, " Jumi 1.0.1;");
+        sb.insert(sb.indexOf("Linux;") + 6, " Jumi 1.0.1;");
 
         return sb.toString();
+    }
+
+    public static boolean isEmpty(String string) {
+        if (string == null || "".equals(string)) {
+            return true;
+        }
+        return false;
     }
 
 }

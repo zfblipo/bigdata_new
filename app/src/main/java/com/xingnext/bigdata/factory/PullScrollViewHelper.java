@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.xingnext.bigdata.R;
 import com.xingnext.bigdata.views.MyListenerScrollView;
+import com.xingnext.bigdata.views.MyPullListenerScrollView;
 
 public abstract class PullScrollViewHelper {
 
@@ -24,7 +25,7 @@ public abstract class PullScrollViewHelper {
 	private boolean isPullMoreEnable = true;
 	private ObjectAnimator anim;
 	
-	private MyListenerScrollView cell_pull_scroll_view;
+	private MyPullListenerScrollView cell_pull_scroll_view;
 	private LinearLayout cell_pull_scroll_content;
 	private View cell_pull_scroll_empty;
 	
@@ -45,7 +46,7 @@ public abstract class PullScrollViewHelper {
 	
 	private void initView(){
 		swipeLayout = (SwipeRefreshLayout) mainView.findViewById(R.id.cell_pull_scroll_swipe);
-		cell_pull_scroll_view = (MyListenerScrollView) mainView.findViewById(R.id.cell_pull_scroll_view);
+		cell_pull_scroll_view = (MyPullListenerScrollView) mainView.findViewById(R.id.cell_pull_scroll_view);
 		cell_pull_scroll_content = (LinearLayout) mainView.findViewById(R.id.cell_pull_scroll_content);
 		footerView = inflater.inflate(R.layout.pull_footer, null);
 		cell_pull_scroll_content.addView(contentView);

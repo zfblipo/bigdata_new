@@ -15,6 +15,7 @@ import com.xingnext.bigdata.beans.GameInfo;
 import com.xingnext.bigdata.beans.GameRecomInfo;
 import com.xingnext.bigdata.beans.ReaderRecomInfo;
 import com.xingnext.bigdata.utils.MyImageLoader;
+import com.xingnext.bigdata.utils.MyPublic;
 
 import java.util.List;
 
@@ -133,7 +134,7 @@ public class ReaderRecomAdapter extends BaseAdapter {
                 holder.item_record_recom_type.setText("串关");
                 holder.item_record_recom_content.setVisibility(View.VISIBLE);
                 holder.item_record_recom_content2.setVisibility(View.GONE);
-                if(!recomInfo.getTitle().isEmpty()){
+                if(!MyPublic.isEmpty(recomInfo.getTitle())){
                     holder.item_record_recom_content.setText(recomInfo.getTitle());
                 }
             }

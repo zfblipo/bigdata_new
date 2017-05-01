@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.xingnext.bigdata.R;
 import com.xingnext.bigdata.beans.GameInfo;
 import com.xingnext.bigdata.utils.MyImageLoader;
+import com.xingnext.bigdata.utils.MyPublic;
 
 import java.util.List;
 
@@ -199,7 +200,7 @@ public class MatchAdapter extends BaseAdapter {
             }
         }
 
-        if ("4".equals(info.getMatch_status())) {
+        if ("10".equals(info.getMatch_status())) {
 
             if (info.getHost_score() > info.getAway_score()) {
                 if (g0 == R.mipmap.check_fail_icon) {
@@ -236,29 +237,36 @@ public class MatchAdapter extends BaseAdapter {
                 holder.item_match_history_rateg.setTextColor(mainLineColor);
             }
 
-            holder.item_match_score.setVisibility(View.VISIBLE);
-            holder.item_match_plan.setVisibility(View.GONE);
-            holder.item_match_score1.setText(info.getHost_score() + "");
-            holder.item_match_score2.setText(info.getAway_score() + "");
-
-        }else{
+        } else {
             holder.item_match_history_winstate.setVisibility(View.GONE);
             holder.item_match_history_pro.setBackgroundResource(R.drawable.blue_border);
             holder.item_match_history_rate.setTextColor(blueColor);
             holder.item_match_history_rateh.setTextColor(blueColor);
             holder.item_match_history_rateg.setTextColor(blueColor);
 
-            holder.item_match_score.setVisibility(View.GONE);
-            holder.item_match_plan.setVisibility(View.VISIBLE);
-
-            holder.item_match_price.setText(info.getPrice() + "球币");
-            holder.item_match_persons.setText(info.getOrder_count() + "人订阅");
         }
         holder.item_match_state.setVisibility(View.VISIBLE);
         holder.item_match_win_icon.setImageResource(g0);
         holder.item_match_draw_icon.setImageResource(g1);
         holder.item_match_failure_icon.setImageResource(g2);
 
+        if ("2".equals(info.getMatch_status()) || "3".equals(info.getMatch_status()) || "4".equals(info.getMatch_status()) || "5".equals(info.getMatch_status()) || "8".equals(info.getMatch_status()) || "10".equals(info.getMatch_status())) {
+            holder.item_match_score.setVisibility(View.VISIBLE);
+            holder.item_match_plan.setVisibility(View.GONE);
+            holder.item_match_score1.setText(info.getHost_score() + "");
+            holder.item_match_score2.setText(info.getAway_score() + "");
+        }else{
+            holder.item_match_score.setVisibility(View.GONE);
+            holder.item_match_plan.setVisibility(View.VISIBLE);
+            holder.item_match_price.setText(info.getPrice() + "球币");
+            if(MyPublic.stringToInt(info.getOrder_count()) == 0){
+                holder.item_match_persons.setVisibility(View.GONE);
+            }else{
+                holder.item_match_persons.setVisibility(View.VISIBLE);
+                holder.item_match_persons.setText(info.getOrder_count() + "人订阅");
+            }
+
+        }
 
     }
 

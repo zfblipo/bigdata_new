@@ -49,6 +49,7 @@ public class MainActivity extends BaseFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         intent = getIntent();
         manager = getSupportFragmentManager();
         preferences = getSharedPreferences("xing_big_user_info",
@@ -120,9 +121,9 @@ public class MainActivity extends BaseFragmentActivity {
             case R.id.layout3:
                 dismissView();
 //                changeLayout(2);
-                if(MyStatic.userData.access_token == null||"".equals(MyStatic.userData.access_token)){
+                if (MyStatic.userData.access_token == null || "".equals(MyStatic.userData.access_token)) {
                     startIntent(LoginActivity.class);
-                }else{
+                } else {
                     startIntent(ProfitWebActivity.class);
                 }
                 break;
@@ -133,8 +134,8 @@ public class MainActivity extends BaseFragmentActivity {
         }
     }
 
-    private void dismissView(){
-        ((MainFragment1_two)fragments[0]).dismissLabel();
+    private void dismissView() {
+        ((MainFragment1_two) fragments[0]).dismissLabel();
     }
 
     private void getStartup() {
@@ -162,25 +163,25 @@ public class MainActivity extends BaseFragmentActivity {
                 if (screen != null) {
                     String pic = screen.optString("pic");
                     String link = screen.optString("link");
-                    if (pic != null&&!pic.equals(MyStatic.startImage)) {
+                    if (pic != null && !pic.equals(MyStatic.startImage)) {
                         MyStatic.startImage = pic;
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("start_image",pic);
+                        editor.putString("start_image", pic);
                         editor.commit();
-                        MyImageLoader.loaderEmpty(mContext,main_image,MyStatic.startImage);
+                        MyImageLoader.loaderEmpty(mContext, main_image, MyStatic.startImage);
                     }
                 }
 
                 MyStatic.gameTypeInfos.clear();
                 JSONArray game_type = data.optJSONArray("game_type");
-                if(game_type!=null){
+                if (game_type != null) {
                     int lent = game_type.length();
                     for (int i = 0; i < lent; i++) {
                         String gameJson = game_type.optString(i);
                         GameTypeInfo gameTypeInfo = gson.fromJson(gameJson, GameTypeInfo.class);
-                        if(i == 0){
+                        if (i == 0) {
                             gameTypeInfo.setChoiced(true);
-                        }else{
+                        } else {
                             gameTypeInfo.setChoiced(false);
                         }
                         MyStatic.gameTypeInfos.add(gameTypeInfo);

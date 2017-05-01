@@ -5,31 +5,33 @@ import android.util.AttributeSet;
 import android.widget.ScrollView;
 
 /**
- * Created by Administrator on 2017/4/5.
+ * Created by lipo on 2017/4/27.
  */
-public class MyListenerScrollView extends ScrollView {
 
-    private OnScrollListener onScrollListener;
+public class MyPullListenerScrollView extends ScrollView {
 
-    public MyListenerScrollView(Context context) {
+    private MyListenerScrollView.OnScrollListener onScrollListener;
+
+    public MyPullListenerScrollView(Context context) {
         super(context);
     }
 
-    public MyListenerScrollView(Context context, AttributeSet attrs) {
+    public MyPullListenerScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyListenerScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyPullListenerScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setOnScrollListener(OnScrollListener onScrollListener) {
+    public void setOnScrollListener(MyListenerScrollView.OnScrollListener onScrollListener) {
         this.onScrollListener = onScrollListener;
     }
 
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
+        t += getHeight()-getPaddingTop()-getPaddingBottom();
         onScrollListener.onListener(l, t, oldl, oldt);
     }
 

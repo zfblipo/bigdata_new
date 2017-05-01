@@ -16,10 +16,10 @@
 
     <ImageView
         android:id="@+id/item_choice_text_icon"
-        android:layout_width="33dp"
-        android:layout_height="28dp"
+        android:layout_width="25dp"
+        android:layout_height="20dp"
         android:src="@mipmap/choice_icon"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="14dp"/>
+        android:layout_marginTop="22dp"/>
 
 </RelativeLayout>

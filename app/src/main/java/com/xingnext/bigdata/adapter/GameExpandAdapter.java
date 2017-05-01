@@ -15,6 +15,7 @@ import com.xingnext.bigdata.R;
 import com.xingnext.bigdata.beans.GameInfo;
 import com.xingnext.bigdata.beans.TimeInfo;
 import com.xingnext.bigdata.utils.MyImageLoader;
+import com.xingnext.bigdata.utils.MyPublic;
 
 import java.util.List;
 
@@ -224,7 +225,7 @@ public class GameExpandAdapter extends BaseExpandableListAdapter {
         int g1 = R.mipmap.check_middle_icon;
         int g2 = R.mipmap.check_middle_icon;
         String forecast = info.getForecast();
-        if (!forecast.isEmpty()) {
+        if (!MyPublic.isEmpty(forecast)) {
             String[] fores = forecast.split(",");
             for (int i = 0; i < fores.length; i++) {
                 if ("3".equals(fores[i])) {
@@ -237,7 +238,7 @@ public class GameExpandAdapter extends BaseExpandableListAdapter {
             }
         }
 
-        if ("4".equals(info.getMatch_status())) {
+        if ("10".equals(info.getMatch_status())) {
             if (info.getHost_score() > info.getAway_score()) {
                 g0 = R.mipmap.check_win_icon;
             } else if (info.getHost_score() == info.getAway_score()) {

@@ -49,6 +49,9 @@ public class BaseApplication extends Application {
         editor.putString("user_id", "");
         editor.putString("access_token", "");
         editor.putString("refresh_token", "");
+        MyStatic.userData.user_id = "";
+        MyStatic.userData.access_token = "";
+        MyStatic.userData.refresh_token = "";
         editor.commit();
     }
 

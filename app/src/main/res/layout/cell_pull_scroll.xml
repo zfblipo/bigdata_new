@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.xingnext.bigdata.views.MyListenerScrollView
+        <com.xingnext.bigdata.views.MyPullListenerScrollView
             android:id="@+id/cell_pull_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -27,7 +27,7 @@
 
             </LinearLayout>
 
-        </com.xingnext.bigdata.views.MyListenerScrollView>
+        </com.xingnext.bigdata.views.MyPullListenerScrollView>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 </FrameLayout>

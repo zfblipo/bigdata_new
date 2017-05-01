@@ -1,5 +1,7 @@
 package com.xingnext.bigdata.beans;
 
+import com.xingnext.bigdata.utils.MyPublic;
+
 import java.io.Serializable;
 
 /**
@@ -44,7 +46,7 @@ public class UserInfo implements Serializable {
     }
 
     public String getSignature() {
-        if(signature.isEmpty()){
+        if(MyPublic.isEmpty(signature)){
             signature = "聚米专家";
         }
         return signature;

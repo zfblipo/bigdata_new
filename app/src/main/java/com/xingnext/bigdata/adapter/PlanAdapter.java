@@ -155,7 +155,7 @@ public class PlanAdapter extends BaseAdapter {
         int winNum = -1;
         String resultStr = "";
 
-        if("4".equals(info.getMatch_status())){
+        if("10".equals(info.getMatch_status())){
             if (info.getHost_score() > info.getAway_score()) {
                 winNum = 3;
                 resultStr = "主胜";

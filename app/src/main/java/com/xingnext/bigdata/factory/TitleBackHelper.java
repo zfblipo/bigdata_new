@@ -14,7 +14,7 @@ public class TitleBackHelper extends BaseHelper {
 
     //导入cell_title_black.xml
 
-    private ImageView cell_title_black_back;
+    private ImageView cell_title_black_back,cell_title_black_icon;
     private TextView cell_title_black_name;
 
     public TitleBackHelper(Activity context, int id) {
@@ -31,6 +31,7 @@ public class TitleBackHelper extends BaseHelper {
     private void initView() {
         cell_title_black_back = (ImageView) findViewById(R.id.cell_title_black_back);
         cell_title_black_name = (TextView) findViewById(R.id.cell_title_black_name);
+        cell_title_black_icon = (ImageView) findViewById(R.id.cell_title_black_icon);
 
         cell_title_black_back.setOnClickListener(onclick);
     }
@@ -59,5 +60,10 @@ public class TitleBackHelper extends BaseHelper {
             }
         }
     };
+
+    public ImageView getTitleIcon(){
+        cell_title_black_icon.setVisibility(View.VISIBLE);
+        return cell_title_black_icon;
+    }
 
 }
