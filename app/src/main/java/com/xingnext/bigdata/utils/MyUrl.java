@@ -47,11 +47,11 @@ public class MyUrl {
      * web
      */
     public static String key_web = "https://jumi.xingnext.com/";
-    public static String chargeWebUrl = key_web+"charge";
-    public static String aboutWebUrl = key_web+"help/index.html";
-    public static String gifWebUrl = key_web+"app/luckywheel";
-    public static String checkWebUrl = key_web+"order/check";
-    public static String couponWebUrl = key_web+"coupon";
+    public static String chargeWebUrl = key_web+"charge";//兑换
+    public static String aboutWebUrl = key_web+"help/index.html";//帮助
+    public static String gifWebUrl = key_web+"app/luckywheel";//抽奖
+    public static String checkWebUrl = key_web+"order/check";//支付
+    public static String couponWebUrl = key_web+"coupon";//优惠券
     public static String profitWebUrl = key_web+"plan";
 
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">聚米足球</string>
+    <string name="app_name">聚米比分</string>
 
     <string name="fragment_name1">比分预测</string>
     <string name="fragment_name2">红单推荐</string>

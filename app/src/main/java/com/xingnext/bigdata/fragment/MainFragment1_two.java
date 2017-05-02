@@ -64,6 +64,7 @@ public class MainFragment1_two extends BaseFragment {
         super.onActivityCreated(savedInstanceState);
 
         fragments = new ArrayList<Fragment>();
+        MainFragment1_twoa.type_id = "1";
 
         initView();
         initPager();

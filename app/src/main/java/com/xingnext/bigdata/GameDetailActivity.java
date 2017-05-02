@@ -307,11 +307,9 @@ public class GameDetailActivity extends BaseActivity {
 
     private void collectBall() {
         if (gameInfo != null) {
-
-
             String url = MyUrl.favoriteList;
             Map<String, String> params = new HashMap<String, String>();
-            params.put("id", gameInfo.getIs_favorite());
+            params.put("id", gameInfo.getMatch_id());
             httpConn.httpGet(url, params, new MyHttpConn.OnCallBack() {
                 @Override
                 public void Success(JSONObject json) {
