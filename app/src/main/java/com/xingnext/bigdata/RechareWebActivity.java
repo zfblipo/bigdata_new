@@ -102,12 +102,18 @@ public class RechareWebActivity extends BaseActivity {
         httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
-                JSONObject data = json.optJSONObject("data");
+                final JSONObject data = json.optJSONObject("data");
                 if("balance".equals(info.getPayment())){
                     submitDataTwo(data.optString("buyer_id"),data.optString("order_sn"));
                 }else if("alipay".equals(info.getPayment())){
                     JSONObject payment_request = data.optJSONObject("payment_request");
                     payBaseHelper.toAlipay(payment_request.optString("alipay"));
+                    payBaseHelper.setOnPaySuccessListener(new PayBaseHelper.OnPaySuccessListener() {
+                        @Override
+                        public void paySuccess() {
+                            submitDataTwo(data.optString("buyer_id"),data.optString("order_sn"));
+                        }
+                    });
                 }
             }
 

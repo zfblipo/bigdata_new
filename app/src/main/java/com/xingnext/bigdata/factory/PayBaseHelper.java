@@ -23,6 +23,8 @@ public class PayBaseHelper {
     private Activity mContext;
     private PayTask alipay;
 
+    private OnPaySuccessListener onPaySuccessListener;
+
     public PayBaseHelper(Activity mContext){
         this.mContext = mContext;
         alipay = new PayTask(mContext);
@@ -47,11 +49,12 @@ public class PayBaseHelper {
                     if (TextUtils.equals(resultStatus, "9000")) {
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
                         Toast.makeText(mContext, "支付成功", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent();
-                        intent.setClass(mContext,PaySuccessActivity.class);
-                        mContext.finish();
-                        mContext.startActivity(intent);
-                        mContext.overridePendingTransition(com.lipo.mylibrary.R.anim.push_right_in,com.lipo.mylibrary.R.anim.push_right_out);
+                        onPaySuccessListener.paySuccess();
+//                        Intent intent = new Intent();
+//                        intent.setClass(mContext,PaySuccessActivity.class);
+//                        mContext.finish();
+//                        mContext.startActivity(intent);
+//                        mContext.overridePendingTransition(com.lipo.mylibrary.R.anim.push_right_in,com.lipo.mylibrary.R.anim.push_right_out);
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
                         Toast.makeText(mContext, "支付失败", Toast.LENGTH_SHORT).show();
@@ -85,6 +88,15 @@ public class PayBaseHelper {
 
         Thread payThread = new Thread(payRunnable);
         payThread.start();
+    }
+
+
+    public void setOnPaySuccessListener(OnPaySuccessListener onPaySuccessListener) {
+        this.onPaySuccessListener = onPaySuccessListener;
+    }
+
+    public interface OnPaySuccessListener{
+        public  void paySuccess();
     }
 
 
