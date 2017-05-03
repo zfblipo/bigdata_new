@@ -2,6 +2,8 @@ package com.xingnext.bigdata;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -9,10 +11,12 @@ import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 import com.lipo.views.MyProgreeDialog;
+import com.lipo.views.ToastView;
 import com.xingnext.bigdata.beans.PayInfo;
 import com.xingnext.bigdata.factory.PayBaseHelper;
 import com.xingnext.bigdata.factory.TitleHelper;
 import com.xingnext.bigdata.utils.MyHttpConn;
+import com.xingnext.bigdata.utils.MyLog;
 import com.xingnext.bigdata.utils.MyStatic;
 import com.xingnext.bigdata.utils.MyUrl;
 
@@ -28,7 +32,7 @@ public class PayWebActivity extends BaseActivity {
     private Intent intent;
     private String plan_id;
     private String amount;
-    private String order_type;//订单类型，1智能预测，2红单推荐
+    private String order_type = "1";//订单类型，1智能预测，2红单推荐
     private MyProgreeDialog myDialog;
 
     private MyHttpConn httpConn;
@@ -46,7 +50,7 @@ public class PayWebActivity extends BaseActivity {
         order_type = intent.getStringExtra("order_type");
         myDialog = new MyProgreeDialog(this);
 
-        httpConn = new MyHttpConn(mContext,false);
+        httpConn = new MyHttpConn(mContext, false);
         gson = new Gson();
         payBaseHelper = new PayBaseHelper(mContext);
 
@@ -61,8 +65,8 @@ public class PayWebActivity extends BaseActivity {
         initWeb();
         myDialog.show();
 
-        String url = MyUrl.checkWebUrl+"?token=" + MyStatic.userData.access_token
-                +"&goods_id=" + plan_id + "&amount=" + amount + "&order_type=" + order_type;
+        String url = MyUrl.checkWebUrl + "?token=" + MyStatic.userData.access_token
+                + "&goods_id=" + plan_id + "&amount=" + amount + "&order_type=" + order_type;
         pay_web_view.loadUrl(url);
 
 //        String url = "https://api.shaobing.jikegouwu.com/order/check?token=" + MyStatic.userData.access_token;
@@ -103,30 +107,56 @@ public class PayWebActivity extends BaseActivity {
 
         @JavascriptInterface
         public void orderPay(String data) {
-            submitData(gson.fromJson(data,PayInfo.class));
+            submitData(gson.fromJson(data, PayInfo.class));
         }
     }
 
-    private void submitData(PayInfo info){
-        String url = MyUrl.orderPay;
+    private void submitData(final PayInfo info) {
+        String url = MyUrl.orderheckPay;
         Map<String, String> params = new HashMap<String, String>();
+        params.put("order_sn", info.getOrder_sn());
         params.put("goods_id",info.getGoods_id());
-        params.put("order_sn",info.getOrder_sn());
         params.put("amount",info.getAmount());
         params.put("order_type",info.getOrder_type());
         params.put("coupon_sn",info.getCoupon_sn());
         params.put("payment",info.getPayment());
+
         httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
                 JSONObject data = json.optJSONObject("data");
-                JSONObject payment_request = data.optJSONObject("payment_request");
-                payBaseHelper.toAlipay(payment_request.optString("alipay"));
+                if("balance".equals(info.getPayment())){
+                    submitDataTwo(data.optString("buyer_id"),data.optString("order_sn"));
+                }else if("alipay".equals(info.getPayment())){
+                    JSONObject payment_request = data.optJSONObject("payment_request");
+                    payBaseHelper.toAlipay(payment_request.optString("alipay"));
+                }
             }
 
             @Override
             public void onError(int code, String msg) {
+                ToastView.setToasd(mContext,"支付失败");
+            }
+        });
+    }
 
+    private void submitDataTwo(String buyer_id,String order_sn) {
+        String url = MyUrl.orderPay;
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("order_sn", order_sn);
+        params.put("user_id",buyer_id);
+        MyLog.i("order_sn:"+order_sn);
+        MyLog.i("user_id:"+buyer_id);
+        httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
+            @Override
+            public void Success(JSONObject json) {
+                finish();
+                startIntent(PaySuccessActivity.class);
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+                ToastView.setToasd(mContext,"支付失败");
             }
         });
     }
@@ -134,7 +164,6 @@ public class PayWebActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         if (myDialog != null && myDialog.isShowing()) {
             myDialog.dismiss();
         }

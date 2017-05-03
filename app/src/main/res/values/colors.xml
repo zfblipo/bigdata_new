@@ -73,4 +73,6 @@
     <color name="sample_fail">#0075A9</color>
     <color name="sample_pin">#22AC38</color>
 
+    <color name="pay_success_text">#FF8800</color>
+
 </resources>

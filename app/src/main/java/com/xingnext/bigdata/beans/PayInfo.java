@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class PayInfo implements Serializable {
 
     private String goods_id;
+    private String buyer_id;
     private String order_sn;
     private String amount;
     private String payment;
@@ -60,5 +61,13 @@ public class PayInfo implements Serializable {
 
     public void setCoupon_sn(String coupon_sn) {
         this.coupon_sn = coupon_sn;
+    }
+
+    public String getBuyer_id() {
+        return buyer_id;
+    }
+
+    public void setBuyer_id(String buyer_id) {
+        this.buyer_id = buyer_id;
     }
 }

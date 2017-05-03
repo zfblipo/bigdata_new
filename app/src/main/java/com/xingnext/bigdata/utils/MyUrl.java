@@ -41,7 +41,8 @@ public class MyUrl {
     public static String billUrl = key+"user/bill";//账户明细
     public static String chargeUrl = key+"charge";//账户明细
 
-    public static String orderPay = key+"order/check";//支付
+    public static String orderheckPay = key+"order/check";//支付提交
+    public static String orderPay = key+"order/cash";//支付
 
     /**
      * web
@@ -53,6 +54,5 @@ public class MyUrl {
     public static String checkWebUrl = key_web+"order/check";//支付
     public static String couponWebUrl = key_web+"coupon";//优惠券
     public static String profitWebUrl = key_web+"plan";
-
 
 }

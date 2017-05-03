@@ -2,6 +2,7 @@ package com.xingnext.bigdata.factory;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.xingnext.bigdata.PaySuccessActivity;
 import com.xingnext.bigdata.utils.PayResult;
 
 import java.util.Map;
@@ -45,6 +47,11 @@ public class PayBaseHelper {
                     if (TextUtils.equals(resultStatus, "9000")) {
                         // 该笔订单是否真实支付成功，需要依赖服务端的异步通知。
                         Toast.makeText(mContext, "支付成功", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent();
+                        intent.setClass(mContext,PaySuccessActivity.class);
+                        mContext.finish();
+                        mContext.startActivity(intent);
+                        mContext.overridePendingTransition(com.lipo.mylibrary.R.anim.push_right_in,com.lipo.mylibrary.R.anim.push_right_out);
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
                         Toast.makeText(mContext, "支付失败", Toast.LENGTH_SHORT).show();

@@ -59,12 +59,13 @@
         <!-- youmeng -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="58f78313f29d980488001aea"></meta-data>
+            android:value="58f78313f29d980488001aea" />
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="Jumi"></meta-data>
+            android:value="Jumi" />
 
-        <activity android:name=".ProfitWebActivity"></activity>
+        <activity android:name=".ProfitWebActivity" />
+        <activity android:name=".PaySuccessActivity"></activity>
     </application>
 
 </manifest>

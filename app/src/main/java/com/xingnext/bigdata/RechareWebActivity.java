@@ -8,6 +8,7 @@ import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 import com.lipo.views.MyProgreeDialog;
+import com.lipo.views.ToastView;
 import com.xingnext.bigdata.beans.PayInfo;
 import com.xingnext.bigdata.factory.PayBaseHelper;
 import com.xingnext.bigdata.factory.TitleHelper;
@@ -88,26 +89,52 @@ public class RechareWebActivity extends BaseActivity {
         }
     }
 
-    private void submitData(PayInfo info){
-        String url = MyUrl.orderPay;
+    private void submitData(final PayInfo info) {
+        String url = MyUrl.orderheckPay;
         Map<String, String> params = new HashMap<String, String>();
+        params.put("order_sn", info.getOrder_sn());
         params.put("goods_id",info.getGoods_id());
-        params.put("order_sn",info.getOrder_sn());
         params.put("amount",info.getAmount());
         params.put("order_type",info.getOrder_type());
         params.put("coupon_sn",info.getCoupon_sn());
         params.put("payment",info.getPayment());
+
         httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
             @Override
             public void Success(JSONObject json) {
                 JSONObject data = json.optJSONObject("data");
-                JSONObject payment_request = data.optJSONObject("payment_request");
-                payBaseHelper.toAlipay(payment_request.optString("alipay"));
+                if("balance".equals(info.getPayment())){
+                    submitDataTwo(data.optString("buyer_id"),data.optString("order_sn"));
+                }else if("alipay".equals(info.getPayment())){
+                    JSONObject payment_request = data.optJSONObject("payment_request");
+                    payBaseHelper.toAlipay(payment_request.optString("alipay"));
+                }
             }
 
             @Override
             public void onError(int code, String msg) {
+                ToastView.setToasd(mContext,"支付失败");
+            }
+        });
+    }
 
+    private void submitDataTwo(String buyer_id,String order_sn) {
+        String url = MyUrl.orderPay;
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("order_sn", order_sn);
+        params.put("user_id",buyer_id);
+        MyLog.i("order_sn:"+order_sn);
+        MyLog.i("user_id:"+buyer_id);
+        httpConn.httpPost(url, params, new MyHttpConn.OnCallBack() {
+            @Override
+            public void Success(JSONObject json) {
+                finish();
+                startIntent(PaySuccessActivity.class);
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+                ToastView.setToasd(mContext,"支付失败");
             }
         });
     }
