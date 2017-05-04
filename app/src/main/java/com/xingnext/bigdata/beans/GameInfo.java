@@ -31,7 +31,7 @@ public class GameInfo implements Serializable {
     private String away_team_image;
     private String away_rank;
     private String away_score;
-    private String match_status;
+    private String match_status;//1未开场2上半场3中场4下半场5加时6待定7腰斩8中断9推迟10完场11取消
     private String match_status_desc;
     private String match_title;
     private String price;
@@ -324,6 +324,9 @@ public class GameInfo implements Serializable {
     }
 
     public String getAi_match_count() {
+        if(ai_match_count == null||"".equals(ai_match_count)){
+            ai_match_count = "--";
+        }
         return ai_match_count;
     }
 
@@ -332,6 +335,9 @@ public class GameInfo implements Serializable {
     }
 
     public String getAi_model_count() {
+        if(ai_model_count == null||"".equals(ai_model_count)){
+            ai_model_count = "--";
+        }
         return ai_model_count;
     }
 
@@ -340,6 +346,9 @@ public class GameInfo implements Serializable {
     }
 
     public String getAi_rule_count() {
+        if(ai_rule_count == null||"".equals(ai_rule_count)){
+            ai_rule_count = "--";
+        }
         return ai_rule_count;
     }
 

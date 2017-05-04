@@ -99,6 +99,9 @@ public class MyPublic {
      * @return
      */
     public static String stringToBFB(String str) {
+        if(str == null || "".equals(str)){
+            return "--";
+        }
 //        double number = com.lipo.utils.MyPublic.stringToDouble(str);
         return str + "%";
     }

@@ -18,7 +18,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginRight="12dp"
-            android:src="@color/black" />
+            android:src="@mipmap/default_team_logo_icon" />
 
         <TextView
             android:id="@+id/item_game_recom_name"
@@ -146,7 +146,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
-            android:src="@color/black" />
+            android:src="@mipmap/default_team_logo_icon" />
 
         <TextView
             android:id="@+id/item_game_recom_team_name1"
@@ -173,7 +173,7 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@color/black" />
+            android:src="@mipmap/default_team_logo_icon" />
 
         <TextView
             android:id="@+id/item_game_recom_team_name2"

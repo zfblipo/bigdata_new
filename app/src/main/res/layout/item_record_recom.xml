@@ -105,7 +105,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_centerVertical="true"
-                android:src="@color/black" />
+                android:src="@mipmap/default_team_logo_icon" />
 
             <TextView
                 android:id="@+id/item_record_recom_team_name1"
@@ -132,7 +132,7 @@
                 android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:src="@color/black" />
+                android:src="@mipmap/default_team_logo_icon" />
 
             <TextView
                 android:id="@+id/item_record_recom_team_name2"

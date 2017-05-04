@@ -194,12 +194,17 @@ public class GameDetailActivity extends BaseActivity {
             game_detail_host_name.setText(gameInfo.getHost_name());
             game_detail_away_name.setText(gameInfo.getAway_name());
             game_detail_time.setText(gameInfo.getMatch_time());
-            game_detail_score.setText(gameInfo.getHost_score() + " : " + gameInfo.getAway_score());
+
+            if("1".equals(gameInfo.getMatch_status())){
+                game_detail_score.setText("未开赛");
+                game_detail_score.setTextSize(18);
+            }else{
+                game_detail_score.setText(gameInfo.getHost_score() + " : " + gameInfo.getAway_score());
+                game_detail_score.setTextSize(24);
+            }
+
 
             if ("4".equals(gameInfo.getMatch_status())) {
-                game_detail_guess_no.setVisibility(View.GONE);
-                game_detail_guess_reslut.setVisibility(View.VISIBLE);
-
 //                if("1".equals(gameInfo.getOrder_status())){
 //                    game_detail_bottom_button.setText("参加红单推荐");
 //                }else{
@@ -207,13 +212,9 @@ public class GameDetailActivity extends BaseActivity {
 //                }
             } else {
                 if ("1".equals(gameInfo.getOrder_status())) {
-                    game_detail_guess_no.setVisibility(View.GONE);
-                    game_detail_guess_reslut.setVisibility(View.VISIBLE);
                     game_detail_bottom_button.setText("参加红单推荐");
                     game_detail_bottom.setVisibility(View.GONE);
                 } else {
-                    game_detail_guess_no.setVisibility(View.VISIBLE);
-                    game_detail_guess_reslut.setVisibility(View.GONE);
                     game_detail_bottom_button.setText(gameInfo.getPrice() + "球币查看预测赛果");
                 }
             }
@@ -248,7 +249,7 @@ public class GameDetailActivity extends BaseActivity {
             int g1 = R.color.main_text6;
             int g2 = R.color.main_text6;
             String forecast = gameInfo.getForecast();
-            if (forecast != null) {
+            if (forecast != null&&!"".equals(forecast)) {
                 String[] fores = forecast.split(",");
                 for (int i = 0; i < fores.length; i++) {
                     if ("3".equals(fores[i])) {
@@ -259,7 +260,11 @@ public class GameDetailActivity extends BaseActivity {
                         g2 = R.color.main_color;
                     }
                 }
-
+                game_detail_guess_no.setVisibility(View.GONE);
+                game_detail_guess_reslut.setVisibility(View.VISIBLE);
+            }else{
+                game_detail_guess_no.setVisibility(View.VISIBLE);
+                game_detail_guess_reslut.setVisibility(View.GONE);
             }
 
             game_detail_winrateg.setTextColor(getResources().getColor(g0));
@@ -270,7 +275,6 @@ public class GameDetailActivity extends BaseActivity {
 
             game_detail_failg.setTextColor(getResources().getColor(g2));
             game_detail_failrate.setTextColor(getResources().getColor(g2));
-
 
         }
     }

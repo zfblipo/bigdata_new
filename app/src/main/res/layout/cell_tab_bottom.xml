@@ -57,7 +57,8 @@
 
         <LinearLayout
             android:id="@+id/layout3"
-            style="@style/Buttom_Item_Style">
+            style="@style/Buttom_Item_Style"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/image3"

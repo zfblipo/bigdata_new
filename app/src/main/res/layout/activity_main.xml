@@ -24,7 +24,8 @@
         android:name="com.xingnext.bigdata.fragment.MainFragment3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.0" />
+        android:layout_weight="1.0"
+        />
 
     <fragment
         android:id="@+id/main_fragment4"

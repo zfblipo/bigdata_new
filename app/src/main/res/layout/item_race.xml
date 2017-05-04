@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/no_icon" />
+            android:src="@mipmap/default_team_logo_icon" />
 
         <TextView
             android:id="@+id/item_race_time"
@@ -38,7 +38,7 @@
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
             android:layout_weight="1"
-            android:src="@drawable/no_icon" />
+            android:src="@mipmap/default_team_logo_icon" />
 
     </LinearLayout>
 

@@ -62,9 +62,6 @@ public class GameRecomDetailActivity extends BaseActivity {
     private Gson gson;
     private GameRecomInfo info;
 
-    private void initViewNew(){
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
